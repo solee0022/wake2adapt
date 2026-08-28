@@ -14,7 +14,7 @@ Uses the `asr-entity` conda environment, with Qwen2.5-Omni-7B as the ASR model.
 srun --gres=gpu:1 --cpus-per-gpu=8 -p A100-80GB -q hpgpu --pty bash
 # once the GPU is allocated, run it right there
 conda activate asr-entity
-python infer_qwen2.5_omni_batch.py \
+python -u src/infer_qwen2.5_omni_batch.py \
     --speaker P001 \
     --domain roads \
     --ref_aud RD16245_P001.wav \
@@ -25,10 +25,10 @@ python infer_qwen2.5_omni_batch.py \
 
 #### 2. Queue it in the background with `sbatch` instead of holding a GPU yourself
 ```bash
-sbatch run_infer.sh
+sbatch scripts/run_infer.sh
 ```
 
-### Running every combination at once (`run_all_experiments.sh`)
+### Running every combination at once (`scripts/run_all_experiments.sh`)
 ```bash
-sbatch run_all_experiments.sh
+sbatch scripts/run_all_experiments.sh
 ```
