@@ -1,0 +1,11 @@
+L2-KPNS
+Qwen2.5-Omni-7B
+out/
+.cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+noise_audios
+L2-KPNS-jsonl/results_noise
+L2-KPNS-jsonl/results
+L2-KPNS-jsonl/results_ablation
